@@ -65,11 +65,9 @@ packages:
   flutter_common_poc:
     dependency: "direct main"
     description:
-      path: "."
-      ref: HEAD
-      resolved-ref: f58b0fdf07e1926a17ddda3651ee710f756c2ba1
-      url: "https://github.com/satishsoni777/flutter_common.git"
-    source: git
+      path: "../flutter_common_poc"
+      relative: true
+    source: path
     version: "0.0.1"
   flutter_test:
     dependency: "direct dev"
