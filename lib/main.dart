@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_module_poc/src/auth_page.dart';
 import 'package:flutter_common_poc/flutter_common_poc.dart';
+import 'package:flutter_module_poc/src/routes.dart';
 
 void main() {
   Injector.setup();
@@ -13,7 +14,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  var initialRoute = '/init_app';
+  var initialRoute = AppRoutes.auth;
   @override
   void initState() {
     super.initState();
@@ -26,10 +27,9 @@ class _MyAppState extends State<MyApp> {
         primarySwatch: Colors.blue,
       ),
       initialRoute: initialRoute,
-      // onGenerateRoute: (){},
       routes: {
-        "/init_app": (c) => InitApp(),
-        "/auth": (c) => AuthPage(),
+        AppRoutes.auth: (c) => AuthPage(),
+        Injector.getIt.get<Routes>().home:(c)=> HomePage()
       },
     );
   }
